@@ -36,24 +36,28 @@ body {
   border-radius: 0 25px 0 25px;
   object-fit: cover;
   background-size: cover;
-  opacity: 0.7;
+
+  opacity: 1;
+  transition: filter 0.3s ease;
+
 }
 
 .text {
-  /* display: none; */
+  display: none;
   color: white;
 }
 
 .swiper-slide:hover {
-  /* opacity: 0.1; */
+  filter: blur(5px);
   transform: scaleX(1.05);
   transform: scaleY(1.05);
-  backdrop-filter: blur(100px);
 }
 
 .swiper-slide:hover .text {
-  display: inline;
-  /* opacity: 1; */
+  display: block;
+  opacity: 1;
+  z-index: 1000;
+  filter: blur(0px);
 }
 
 .swiper-slide img {

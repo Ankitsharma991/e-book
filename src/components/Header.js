@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Image from "../images/2.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  let navigate = useNavigate();
+  const goToRoute = (route) => {
+    navigate(route);
+  };
   return (
     <div>
       <div className="flex text-white  px-[50px]  bg-black h-[10vh] items-center ">
@@ -27,7 +31,10 @@ function Header() {
             </h2>
           </div>
           <div className="h-[5vh]  w-[4vw] ease-in flex justify-center items-center border-cyan-500 hover:border-b-2">
-            <h2 className="hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out">
+            <h2
+              className="hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out"
+              onClick={() => goToRoute("signup")}
+            >
               Register
             </h2>
           </div>
