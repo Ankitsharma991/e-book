@@ -11,6 +11,11 @@ function Body() {
         <div
           className={`bg-opacity-90 bg-black bg-cover flex justify-center items-center text-white flex-col z-0 min-h-[90vh] w-[100vw] bg-${Image}`}
         >
+          <div className="flex mb-5 border-b-2 border-white border-dashed">
+            <h1 className="font-bold text-3xl">
+              Bestselling Books of the Week
+            </h1>
+          </div>
           <div className="z-100 text-white w-[30vw] h-auto flex flex-col justify-center">
             <div className="flex flex-1 text-black">
               <Slider />
@@ -20,7 +25,7 @@ function Body() {
                 className="font-bold text-lg hover:scale-110 duration-250
             "
               >
-                Start Exploring
+                Find Learnings
               </p>
             </div>
             <p className="text-center mt-4 leading-6 ">

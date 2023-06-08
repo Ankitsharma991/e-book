@@ -1,42 +1,47 @@
 import React, { useState } from "react";
 import Image from "../images/2.jpg";
-import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  let navigate = useNavigate();
-  const goToRoute = (route) => {
-    navigate(route);
-  };
+
   return (
     <div>
       <div className="flex text-white  px-[50px]  bg-black h-[10vh] items-center ">
         <div className="flex flex-1">
-          <h1 className="text-3xl font-bold flex-1 cursor-pointer">BookGhar</h1>
+          <a href="/">
+            <h1 className="text-3xl font-bold flex-1 cursor-pointer">
+              BookGhar
+            </h1>
+          </a>
         </div>
         <div className="flex items-center gap-10 mr-[50px] cursor-pointer">
           <div className="h-[5vh] w-[4vw] ease-in flex justify-center items-center border-cyan-500 hover:border-b-2 ">
-            <h2 className="ease-in-out hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250">
-              Home
-            </h2>
+            <a href="/">
+              <h2 className="ease-in-out hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250">
+                Home
+              </h2>
+            </a>
           </div>
           <div className="h-[5vh] w-[4vw] ease-in flex justify-center items-center border-cyan-500 hover:border-b-2">
-            <h2 className=" flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out hover:text-cyan-200">
-              Store
-            </h2>
+            <a href="/store">
+              <h2 className=" flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out hover:text-cyan-200">
+                Store
+              </h2>
+            </a>
           </div>
           <div className="h-[5vh]  w-[4vw] ease-in flex justify-center items-center border-cyan-500 hover:border-b-2">
-            <h2 className="hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out">
-              Contact
-            </h2>
+            <a href="/contact">
+              <h2 className="hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out">
+                Contact
+              </h2>
+            </a>
           </div>
           <div className="h-[5vh]  w-[4vw] ease-in flex justify-center items-center border-cyan-500 hover:border-b-2">
-            <h2
-              className="hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out"
-              onClick={() => goToRoute("signup")}
-            >
-              Register
-            </h2>
+            <a href="/signup">
+              <h2 className="hover:text-cyan-200 flex text-lg items-center px-0 py-[12px] hover:scale-150 duration-250 ease-in-out">
+                Register
+              </h2>
+            </a>
           </div>
         </div>
         <div
@@ -54,7 +59,9 @@ function Header() {
             </div>
           ) : (
             <div className="border-2 rounded-lg cursor-pointer bg-white text-black font-bold p-2 w-[8rem] text-center text-lg hover:opacity-80">
-              <p>Login</p>
+              <a href="/login">
+                <p>Login</p>
+              </a>
             </div>
           )}
         </div>

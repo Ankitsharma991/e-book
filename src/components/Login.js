@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./Header";
-import SignUpForm from "./SignUpForm";
+import LoginForm from "./LoginForm";
 
-function SignUp() {
+const Login = () => {
   return (
     <div>
       <Header />
-      <SignUpForm />
+      <LoginForm />
     </div>
   );
-}
+};
 
-export default SignUp;
+export default Login;

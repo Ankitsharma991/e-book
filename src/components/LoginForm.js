@@ -30,7 +30,7 @@ const tailFormItemLayout = {
     },
   },
 };
-const SignUpForm = () => {
+const LoginForm = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
@@ -43,7 +43,7 @@ const SignUpForm = () => {
       "
       >
         <div className="flex justify-center text-center border-b-2 border-black mb-10 ">
-          <h2 className="text-lg font-bold pb-5  ">Register Here</h2>
+          <h2 className="text-lg font-bold pb-5  ">Login Here</h2>
         </div>
         <Form
           className="flex flex-col justify-center outline-black"
@@ -56,18 +56,6 @@ const SignUpForm = () => {
           }}
           scrollToFirstError
         >
-          <Form.Item
-            label="Name"
-            name="name"
-            rules={[
-              {
-                required: true,
-                message: "Please input your name!",
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
           <Form.Item
             name="email"
             label="E-mail"
@@ -99,31 +87,6 @@ const SignUpForm = () => {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item
-            name="confirm"
-            label="Confirm Password"
-            dependencies={["password"]}
-            hasFeedback
-            rules={[
-              {
-                required: true,
-                message: "Please confirm your password!",
-              },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue("password") === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(
-                    new Error("The new password that you entered do not match!")
-                  );
-                },
-              }),
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
-
           <div className="flex flex-col justify-center items-center">
             <Form.Item
               {...tailFormItemLayout}
@@ -133,13 +96,13 @@ const SignUpForm = () => {
                 className="bg-black text-white hover:opacity-70 hover:bg-black hover-text-white outline-none hover:outline-none "
                 htmlType="submit"
               >
-                Register
+                Sign-in
               </Button>
             </Form.Item>
             <p>
-              <span>Already have an account?</span>
-              <a href="/login" className="text-blue-700 underline">
-                Login
+              <span>Don't have an account?</span>
+              <a href="/signup" className="text-blue-700 underline">
+                SignUp
               </a>
             </p>
           </div>
@@ -148,4 +111,4 @@ const SignUpForm = () => {
     </div>
   );
 };
-export default SignUpForm;
+export default LoginForm;
