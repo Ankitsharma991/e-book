@@ -8,9 +8,7 @@ function Body() {
   return (
     <>
       <div>
-        <div
-          className={`bg-opacity-90 bg-black bg-cover flex justify-center items-center text-white flex-col z-0 min-h-[90vh] w-[100vw] bg-${Image}`}
-        >
+        <div className="backdrop-blur-sm bg-cover bg-no-repeat	 bg-black  flex justify-center items-center text-white flex-col z-0 min-h-[90vh] w-[100vw] bg-default-image ">
           <div className="flex mb-5 border-b-2 border-white border-dashed">
             <h1 className="font-bold text-3xl">
               Bestselling Books of the Week
