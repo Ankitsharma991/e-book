@@ -30,6 +30,12 @@ const tailFormItemLayout = {
     },
   },
 };
+
+const initialFormData = {
+  email: "",
+  password: "",
+};
+
 const LoginForm = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {

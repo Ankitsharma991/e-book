@@ -52,9 +52,9 @@ const App = () => {
   };
   return (
     <Form name="form_item_path" layout="vertical" onFinish={onFinish}>
-        <div className="w-[30vw] flex items-center justify-center pb-1 mb-2 border-b-2 border-dotted border-slate-600">
-            <h1 className="text-lg font-bold">Fill up the Book Details</h1>
-        </div>
+      <div className="w-[30vw] flex items-center justify-center pb-1 mb-2 border-b-2 border-dotted border-slate-600">
+        <h1 className="text-lg font-bold">Fill up the Book Details</h1>
+      </div>
       <MyFormItemGroup prefix={["user"]}>
         <MyFormItemGroup prefix={["name"]}>
           <MyFormItem
@@ -73,15 +73,6 @@ const App = () => {
             <Input />
           </MyFormItem>
         </MyFormItemGroup>
-
-        <MyFormItem
-          name="Price"
-          label="Price (Nrs)"
-          className="w-[30vw] font-bold "
-        >
-          <Input />
-        </MyFormItem>
-
         <MyFormItem
           name="origin"
           label="Country and Language"
@@ -90,53 +81,65 @@ const App = () => {
           <Input />
         </MyFormItem>
 
-        <div className="w-[30vw] font-bold ">
-          <p>Select Category</p>
-          <Select
-            className="w-[30vw] font-bold mt-2 mb-6"
-            showSearch
-            placeholder="Search to Select"
-            optionFilterProp="children"
-            filterOption={(input, option) =>
-              (option?.label ?? "").includes(input)
-            }
-            filterSort={(optionA, optionB) =>
-              (optionA?.label ?? "")
-                .toLowerCase()
-                .localeCompare((optionB?.label ?? "").toLowerCase())
-            }
-            options={[
-              {
-                value: "1",
-                label: "Horror",
-              },
-              {
-                value: "2",
-                label: "Poetry",
-              },
-              {
-                value: "3",
-                label: "Short Story",
-              },
-              {
-                value: "4",
-                label: "Biography",
-              },
-              {
-                value: "5",
-                label: "Business",
-              },
-              {
-                value: "6",
-                label: "Romance",
-              },
-            ]}
-          />
+        <div className="flex justify-around items-center gap-5 w-[30vw]">
+        
+            <MyFormItem
+              name="Price"
+              label="Price (Nrs)"
+              className="w-[30vw] font-bold "
+            >
+              <Input />
+            </MyFormItem>
+          
+
+          <div className=" font-bold ">
+            <p>Select Category</p>
+            <Select
+              className="w-[12vw] font-bold mt-2 mb-6"
+              showSearch
+              placeholder="Search to Select"
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                (option?.label ?? "").includes(input)
+              }
+              filterSort={(optionA, optionB) =>
+                (optionA?.label ?? "")
+                  .toLowerCase()
+                  .localeCompare((optionB?.label ?? "").toLowerCase())
+              }
+              options={[
+                {
+                  value: "1",
+                  label: "Horror",
+                },
+                {
+                  value: "2",
+                  label: "Poetry",
+                },
+                {
+                  value: "3",
+                  label: "Short Story",
+                },
+                {
+                  value: "4",
+                  label: "Biography",
+                },
+                {
+                  value: "5",
+                  label: "Business",
+                },
+                {
+                  value: "6",
+                  label: "Romance",
+                },
+              ]}
+            />
+          </div>
         </div>
       </MyFormItemGroup>
       <div className="w-[30vw]">
         <p className="font-bold mb-3">Add Cover Picture</p>
-        <Dragger {...props} >
+        <Dragger {...props}>
           <p className="ant-upload-drag-icon">
             <InboxOutlined />
           </p>
